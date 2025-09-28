@@ -18,11 +18,24 @@ public class BaseClickLoop : MonoBehaviour
         ClickButton(); // Виклик метода кліку
         ClickImpactEffect();
     }
+    public void OnMouseUp()
+    {
+        DisableClickImpacktEffect();
+    }
     public void ClickImpactEffect()
     {
-        if (!buttonPressStatus) // Якщо кнопка НЕ натиснута
+        if (buttonPressStatus == false) // Якщо кнопка НЕ натиснута
         {
-            transform.position = transform.position + new Vector3(0, -0.3f, 0);
+            transform.localPosition = new Vector3(0, 0.25f, 0);
+            buttonPressStatus = true;
+        }
+    }
+    public void DisableClickImpacktEffect()
+    {
+        if (buttonPressStatus == true) // Якщо кнопка натиснута
+        {
+            transform.localPosition = new Vector3(0, 0.44f, 0);
+            buttonPressStatus = false;
         }
     }
 }
