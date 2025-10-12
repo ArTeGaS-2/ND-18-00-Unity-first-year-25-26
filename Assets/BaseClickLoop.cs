@@ -7,11 +7,18 @@ public class BaseClickLoop : MonoBehaviour
 {
     public int clickCounter = 0; // Лічильник
     public TextMeshProUGUI textObj; // Текст на сцені
+    public TextMeshProUGUI shopTextObj; // Текст на сцені в магазині
+
+    public string creditsText; // Текст всередині лічильника
+
+    [HideInInspector]public int creditsPerClick = 1; // Кількість валюти за клік
+
     private bool buttonPressStatus = false; // Чи натиснута кнопка
     public void ClickButton()
     {
-        clickCounter++; // Плюс один на кожному натисканні
-        textObj.text = "Монети: " + clickCounter.ToString(); // Текст лічильника на сцені
+        clickCounter += creditsPerClick; // Додає кредити за клік
+        textObj.text = creditsText + clickCounter.ToString(); // Текст лічильника на сцені
+        shopTextObj.text = creditsText + clickCounter.ToString();
     }
     public void OnMouseDown()
     {
