@@ -17,8 +17,8 @@ public class BaseClickLoop : MonoBehaviour
     private void Start()
     {
         clickCounter = Economy.Instance.clickCounter;
-        textObj = Economy.Instance.textObj;
-        shopTextObj = Economy.Instance.shopTextObj;
+        textObj = Economy.Instance.counterTextInGame;
+        shopTextObj = Economy.Instance.counterTextInShop;
         creditsText = Economy.Instance.creditsText;
         creditsPerClick = Economy.Instance.creditsPerClick;
     }

@@ -7,25 +7,34 @@ public class Economy : MonoBehaviour
 {
     public static Economy Instance; // Сінглтон
 
-    public int clickCounter = 0; // Лічильник
-    public TextMeshProUGUI textObj; // Текст на сцені
-    public TextMeshProUGUI shopTextObj; // Текст на сцені в магазині
-
+    [Header("Лічильник")]
+    public float clickCounter = 0f; // Лічильник
     public string creditsText; // Текст всередині лічильника
 
-    [HideInInspector] public int creditsPerClick = 1; // Кількість валюти за клік
-
+    [Header("Бонус")]
+    public float bonusPrice = 100f; // Постійна ціна
+    public float bounsPriceMod = 100f; // Модифікатор ціни у %
+    public float creditsPerClick = 1f; // Кількість валюти за клік
+    [HideInInspector] public float bonusCounter = 0f; // Кількість куплених бонусів
+    [Header("Тексти на сцені")]
+    public TextMeshProUGUI counterTextInGame; // Текст на сцені
+    public TextMeshProUGUI counterTextInShop; // Текст в магазині
+    public TextMeshProUGUI bonusPriceText;
+    public TextMeshProUGUI bonusCounterText;
     private void Awake()
     {
         Instance = this;
     }
-    public float TakeCurrentPrice()
+    public void TakeCurrentPrice()
     {
-
+        float price = bonusPrice + (bonusPrice / 100 * bounsPriceMod);
+        bonusPrice = price;
     }
     public void UpdateText()
     {
-        textObj.text = creditsText + clickCounter.ToString(); // Текст лічильника на сцені
-        shopTextObj.text = creditsText + clickCounter.ToString();
+        counterTextInGame.text = creditsText + clickCounter.ToString(); // Текст лічильника на сцені
+        counterTextInShop.text = creditsText + clickCounter.ToString();
+        bonusPriceText.text = $"Ціна: {bonusPrice}";
+        bonusCounterText.text = $"+ {creditsPerClick} за клік"; // за клік
     }
 }
