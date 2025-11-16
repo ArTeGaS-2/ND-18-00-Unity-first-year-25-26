@@ -5,28 +5,12 @@ using TMPro;
 
 public class BaseClickLoop : MonoBehaviour
 {
-    private float clickCounter; // Лічильник
-    private TextMeshProUGUI textObj; // Текст на сцені
-    private TextMeshProUGUI shopTextObj; // Текст на сцені в магазині
-
-    private string creditsText; // Текст всередині лічильника
-
-    private float creditsPerClick; // Кількість валюти за клік
-
-    private bool buttonPressStatus = false; // Чи натиснута кнопка
-    private void Start()
-    {
-        clickCounter = Economy.Instance.clickCounter;
-        textObj = Economy.Instance.counterTextInGame;
-        shopTextObj = Economy.Instance.counterTextInShop;
-        creditsText = Economy.Instance.creditsText;
-        creditsPerClick = Economy.Instance.creditsPerClick;
-    }
+    private bool buttonPressStatus = false;
     public void ClickButton()
     {
-        clickCounter += creditsPerClick; // Додає кредити за клік
-        textObj.text = creditsText + clickCounter.ToString(); // Текст лічильника на сцені
-        shopTextObj.text = creditsText + clickCounter.ToString();
+        Economy.Instance.clickCounter +=
+            Economy.Instance.creditsPerClick; // Додає кредити за клік
+        Economy.Instance.UpdateText();
     }
     public void OnMouseDown()
     {
