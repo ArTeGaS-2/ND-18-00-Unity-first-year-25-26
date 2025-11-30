@@ -13,7 +13,7 @@ public class Quit : MonoBehaviour
             escMenu.SetActive(!escMenu.activeSelf);
         }
     }
-    public void EscButtonPress()
+    public void ExitButtonPress()
     {
         Application.Quit();
     }

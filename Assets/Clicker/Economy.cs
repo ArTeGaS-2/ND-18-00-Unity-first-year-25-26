@@ -16,6 +16,12 @@ public class Economy : MonoBehaviour
     public float bounsPriceMod = 100f; // Модифікатор ціни у %
     public float creditsPerClick = 1f; // Кількість валюти за клік
     [HideInInspector] public float bonusCounter = 0f; // Кількість куплених бонусів
+
+    [Header("АвтоКлік")]
+    public float autoClickPrice = 200f;
+    public float autoClickPriceMod = 200f;
+    public float creditsPerAutoClick = 0f;
+
     [Header("Тексти на сцені")]
     public TextMeshProUGUI counterTextInGame; // Текст на сцені
     public TextMeshProUGUI counterTextInShop; // Текст в магазині
