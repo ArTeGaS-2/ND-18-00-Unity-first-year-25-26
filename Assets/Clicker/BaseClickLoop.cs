@@ -6,6 +6,14 @@ using TMPro;
 public class BaseClickLoop : MonoBehaviour
 {
     private bool buttonPressStatus = false;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ClickButton();
+            ClickImpactEffect();
+        }
+    }
     public void ClickButton()
     {
         Economy.Instance.clickCounter +=

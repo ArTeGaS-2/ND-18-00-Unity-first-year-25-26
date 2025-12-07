@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class AutoClick : MonoBehaviour
 {
-    public float interval = 1f;
-    private void Update()
+    public static AutoClick Instance; // Сінглтон
+    private void Awake()
     {
-        Economy.Instance.clickCounter += interval;
+        Instance = this;
+    }
+    public IEnumerator AutoClickCicle(
+        float counter, float interval, float CPS)
+    {
+        counter += CPS;
+        yield return new WaitForSeconds(interval);
     }
 }

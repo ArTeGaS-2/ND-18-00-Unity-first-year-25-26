@@ -18,15 +18,20 @@ public class Economy : MonoBehaviour
     [HideInInspector] public float bonusCounter = 0f; // Кількість куплених бонусів
 
     [Header("АвтоКлік")]
-    public float autoClickPrice = 200f;
-    public float autoClickPriceMod = 200f;
-    public float creditsPerAutoClick = 0f;
+    public float autoClickPrice = 200f; // Ціна
+    public float autoClickPriceMod = 200f; // модифікатор ціни
+    public float creditsPerAutoClick = 0f; // кількість за секунду
+    public float interval = 1f; // затримка у секунду
+    private Coroutine autoClickRoutine; // процес автокліку
 
     [Header("Тексти на сцені")]
     public TextMeshProUGUI counterTextInGame; // Текст на сцені
     public TextMeshProUGUI counterTextInShop; // Текст в магазині
-    public TextMeshProUGUI bonusPriceText;
-    public TextMeshProUGUI bonusCounterText;
+    public TextMeshProUGUI bonusPriceText; // Ціна бонусу кліку
+    public TextMeshProUGUI bonusCounterText; // Кількість куплених бонусів
+    public TextMeshProUGUI autoBonusPriceText; // Ціна авто кліку
+    public TextMeshProUGUI autoBonusCounterText; // Кількість куплених автокліків
+
     private void Awake()
     {
         Instance = this;
@@ -35,6 +40,13 @@ public class Economy : MonoBehaviour
     {
         float price = bonusPrice + (bonusPrice / 100 * bounsPriceMod);
         bonusPrice = price;
+    }
+    public void UpdateAutoClick()
+    {
+
+        float price = autoClickPrice + (
+            autoClickPrice / 100 * autoClickPriceMod);
+        autoClickPrice = price;
     }
     public void UpdateText()
     {

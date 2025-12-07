@@ -1558,6 +1558,7 @@ GameObject:
   - component: {fileID: 1714929811}
   - component: {fileID: 1714929812}
   - component: {fileID: 1714929813}
+  - component: {fileID: 1714929814}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1686,6 +1687,9 @@ MonoBehaviour:
   bounsPriceMod: 100
   creditsPerClick: 1
   bonusCounter: 0
+  autoClickPrice: 200
+  autoClickPriceMod: 200
+  creditsPerAutoClick: 0
   counterTextInGame: {fileID: 7508300392232844188}
   counterTextInShop: {fileID: 7401225645572483121}
   bonusPriceText: {fileID: 1421087574}
@@ -1703,6 +1707,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   escMenu: {fileID: 849986020}
+--- !u!114 &1714929814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714929806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449e6a8a1b816014eb5211ba063eca7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 0
 --- !u!1 &1940458245
 GameObject:
   m_ObjectHideFlags: 0
