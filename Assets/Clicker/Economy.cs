@@ -43,10 +43,16 @@ public class Economy : MonoBehaviour
     }
     public void UpdateAutoClick()
     {
-
+        Debug.Log("work");
+        if (autoClickRoutine != null)
+        {
+            StopCoroutine(autoClickRoutine);
+        }
         float price = autoClickPrice + (
             autoClickPrice / 100 * autoClickPriceMod);
         autoClickPrice = price;
+        StartCoroutine(AutoClick.Instance.AutoClickCicle(
+            clickCounter, interval, creditsPerAutoClick));
     }
     public void UpdateText()
     {
