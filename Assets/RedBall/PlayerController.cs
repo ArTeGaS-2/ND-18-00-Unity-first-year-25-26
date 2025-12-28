@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
             transform.position,
             Vector3.down,
             groundCheckDistance);
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.W) ||
+            Input.GetKeyDown(KeyCode.UpArrow) ||
+            Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Vector3 velocity = rb.velocity;
             velocity.y = 0f;
@@ -29,7 +31,12 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce,
                 ForceMode.VelocityChange);
         }
-
-
+    }
+    private void FixedUpdate()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        Vector3 velocity = rb.velocity;
+        velocity.x = horizontal * moveSpeed;
+        rb.velocity = velocity;
     }
 }

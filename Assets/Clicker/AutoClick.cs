@@ -9,10 +9,10 @@ public class AutoClick : MonoBehaviour
     {
         Instance = this;
     }
-    public IEnumerator AutoClickCicle(
-        float counter, float interval, float CPS)
+    public IEnumerator AutoClickCicle(float interval, float CPS)
     {
-        counter += CPS;
+        Economy.Instance.clickCounter += CPS;
+        Economy.Instance.UpdateText();
         yield return new WaitForSeconds(interval);
     }
 }
