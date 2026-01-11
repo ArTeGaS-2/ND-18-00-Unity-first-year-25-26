@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] GameObject cameraInGame;
+
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float jumpForce = 6f;
     [SerializeField] float groundCheckDistance = 0.6f;
@@ -23,13 +25,17 @@ public class PlayerController : MonoBehaviour
             groundCheckDistance);
         if (Input.GetKeyDown(KeyCode.W) ||
             Input.GetKeyDown(KeyCode.UpArrow) ||
-            Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            Input.GetKeyDown(KeyCode.Space))
         {
-            Vector3 velocity = rb.velocity;
-            velocity.y = 0f;
-            rb.velocity = velocity;
-            rb.AddForce(Vector3.up * jumpForce,
-                ForceMode.VelocityChange);
+            if (isGrounded)
+            {
+                Vector3 velocity = rb.velocity;
+                velocity.y = 0f;
+                rb.velocity = velocity;
+                rb.AddForce(Vector3.up * jumpForce,
+                    ForceMode.VelocityChange);
+            }
+            
         }
     }
     private void FixedUpdate()
@@ -38,5 +44,12 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = rb.velocity;
         velocity.x = horizontal * moveSpeed;
         rb.velocity = velocity;
+    }
+    private void LateUpdate()
+    {
+        cameraInGame.transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y,
+            transform.position.z - 10f);
     }
 }
