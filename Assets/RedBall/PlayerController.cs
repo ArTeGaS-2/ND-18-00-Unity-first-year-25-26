@@ -49,7 +49,9 @@ public class PlayerController : MonoBehaviour
     {
         cameraInGame.transform.position = new Vector3(
             transform.position.x,
-            transform.position.y,
+            cameraInGame.transform.position.y,
             transform.position.z - 10f);
+
+        cameraInGame.transform.eulerAngles = Vector3.zero;
     }
 }
