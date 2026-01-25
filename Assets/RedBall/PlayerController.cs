@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -44,6 +45,11 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = rb.velocity;
         velocity.x = horizontal * moveSpeed;
         rb.velocity = velocity;
+
+        if (transform.position.y <= -15f)
+        {
+            SceneManager.LoadScene("RedBall");
+        }
     }
     private void LateUpdate()
     {
