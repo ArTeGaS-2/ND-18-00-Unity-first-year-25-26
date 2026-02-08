@@ -23,15 +23,4 @@ public class Camera_2D : MonoBehaviour
         // ЎукаЇмо об'Їкт гравц€ за тегом
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    private void LateUpdate()
-    {
-        TrackPlayerByCamera();
-    }
-    private void TrackPlayerByCamera()
-    {
-        transform.position = new Vector3(
-            player.transform.position.x,
-            isHeightChange ? player.transform.position.y + cameraHeight : cameraHeight,
-            player.transform.position.z + cameraDistance);
-    }
 }
