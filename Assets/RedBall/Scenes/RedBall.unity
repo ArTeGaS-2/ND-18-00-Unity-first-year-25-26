@@ -615,6 +615,7 @@ GameObject:
   - component: {fileID: 406273227}
   - component: {fileID: 406273226}
   - component: {fileID: 406273225}
+  - component: {fileID: 406273229}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -663,7 +664,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b4b140f3104894b488cb9be2985c5b99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -708,6 +709,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 90}
+--- !u!114 &406273229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406273224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006b276533a408842b3aace7558ffc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: RedBall
+  playerTag: Player
 --- !u!1 &445097228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1366,7 @@ GameObject:
   - component: {fileID: 1183936698}
   - component: {fileID: 1183936697}
   - component: {fileID: 1183936696}
+  - component: {fileID: 1183936700}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -1399,7 +1415,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b4b140f3104894b488cb9be2985c5b99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1444,6 +1460,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 90}
+--- !u!114 &1183936700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183936695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006b276533a408842b3aace7558ffc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: RedBall
+  playerTag: Player
 --- !u!1 &1187115232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,6 +2769,7 @@ GameObject:
   - component: {fileID: 2084292632}
   - component: {fileID: 2084292631}
   - component: {fileID: 2084292630}
+  - component: {fileID: 2084292634}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -2787,7 +2818,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b4b140f3104894b488cb9be2985c5b99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2832,6 +2863,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 90}
+--- !u!114 &2084292634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084292629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006b276533a408842b3aace7558ffc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: RedBall
+  playerTag: Player
 --- !u!1 &2107728663
 GameObject:
   m_ObjectHideFlags: 0

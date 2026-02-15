@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class BaseDanger : MonoBehaviour
 {
+    public string sceneToLoad = "RedBall"; // Назва сцени
+    public string playerTag = "Player"; // Тег гравця
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        // Перевіряємо, чи зіткнення відбулося з гравцем
+        if (collision.gameObject.CompareTag(playerTag))
         {
-            SceneManager.LoadScene("RedBall"); // FlappyBird
+            // Завантажуємо вказану сцену
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }
