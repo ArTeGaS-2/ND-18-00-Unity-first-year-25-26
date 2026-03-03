@@ -15,4 +15,5 @@ public class FinishZone : MonoBehaviour
             SceneManager.LoadScene(sceneToLoad);
         }
     }
+    
 }
