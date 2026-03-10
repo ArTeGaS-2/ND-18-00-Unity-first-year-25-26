@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AutoClick : MonoBehaviour
 {
-    public static AutoClick Instance; // Сінглтон
+    public static AutoClick Instance; // СіпїЅпїЅпїЅпїЅпїЅпїЅ
     private void Awake()
     {
         Instance = this;
