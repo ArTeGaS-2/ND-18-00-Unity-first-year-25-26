@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject projectile; // Посилання на снаряд
+    [SerializeField] GameObject spawnPoint; // точка спавну снаряду
+    public float attackInterval = 1f; // Інтервал між пострілами
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        StartCoroutine(Shoot());
+    }
+    private IEnumerator Shoot()
+    {
+        while (true) 
+        {
+            yield return new WaitForSeconds(attackInterval); // Затримку у сек
+            Instantiate(
+                projectile, // Об'єкт який створюємо
+                spawnPoint.transform.position, // Точка виходу снаряду
+                Quaternion.identity); // Обертання
+        }
     }
 }
