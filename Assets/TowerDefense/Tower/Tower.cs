@@ -6,8 +6,8 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] GameObject projectile; // Посилання на снаряд
     [SerializeField] GameObject spawnPoint; // точка спавну снаряду
-    public float attackInterval = 1f; // Інтервал між пострілами
-
+    public float attackInterval = 1f; // Інтервал між пострілами 
+    
     private void Start()
     {
         StartCoroutine(Shoot());
