@@ -5,8 +5,8 @@ using UnityEngine;
 public class CamCTRL : MonoBehaviour
 {
     [Header("Параметри камери")]
-    [SerializeField] float cameraSpeed = 1f;
-    [SerializeField] float cameraDistance = 10f;
+    [SerializeField] float cameraSpeed = 10f;
+    [SerializeField] float cameraDistance = 30f;
 
     [Header("Обмеження")]
     [SerializeField] float horizontalBorder = 50f;
@@ -21,12 +21,12 @@ public class CamCTRL : MonoBehaviour
         // Скролл колесом миші
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-        // Рух вперед/назад та вліво/вправо
+        // Рух по 4 напрямках
         transform.position = new Vector3(
-            transform.position.x + horizontal * cameraSpeed * Time.deltaTime,
+            transform.position.x + horizontal * cameraSpeed * Time.fixedDeltaTime,
             transform.position.y,
-            transform.position.z + vertical * cameraSpeed * Time.deltaTime);
+            transform.position.z + vertical * cameraSpeed * Time.fixedDeltaTime);
 
-        Camera.main.fieldOfView += scroll * cameraSpeed * Time.deltaTime;
+        Camera.main.fieldOfView -= scroll * cameraDistance * Time.fixedDeltaTime;
     }
 }
