@@ -884,9 +884,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSpeed: 20
-  cameraDistance: 30
-  horizontalBorder: 50
-  verticalBorder: 50
+  zoomSpeed: 10
+  horizontalBorder: 20
+  verticalBorder: 20
+  minZoom: 45
+  maxZoom: 75
 --- !u!1 &645277324
 GameObject:
   m_ObjectHideFlags: 0
